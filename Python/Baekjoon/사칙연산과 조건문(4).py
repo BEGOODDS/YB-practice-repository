@@ -33,19 +33,6 @@ elif a < 0 and b < 0 :
 else :
     print('4')
 
-hour, min = map(int, input('').split())
-time = int(input(''))
-min_ = min + time
-if min_ >= 60 :
-    if hour >= 24 :
-        hour = 0
-        print(hour, min)
-    else :
-        hour = hour, min = hour + 1, time - (60 - min)
-        print(hour, min)
-elif min_ < 60 :
-    print(min_)
-
 # 2번째 문제 설명
 # 훈제오리구이를 시작하는 시각과 오븐구이를 하는 데 필요한 시간이 분단위로 주어졌을 때, 
 # 오븐구이가 끝나는 시각을 계산하는 프로그램을 작성하시오.
