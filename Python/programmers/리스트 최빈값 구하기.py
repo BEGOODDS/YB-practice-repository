@@ -14,5 +14,11 @@ def solution(array):
     counts = Counter(array) # 각 값과 값의 개수가 들어있는 튜플 생성
     # most_common()을 활용하여 최빈값부터 먼저 정렬되는 리스트 생성
     common_list = counts.most_common()
-    answer = common_list[0][0]
+    # chatGPT 활용 - 같은 값을 가진 키가 존재할 때 -1을 반환하는 if문 작성 요청
+    most_common_count = common_list[0][1] # 최빈값
+    # if문 - 값만 비교하기 때문에 for문에서 _을 사용하여 키 무시
+    if any(count == most_common_count for _, count in common_list[1:]) :
+        answer = -1
+    else :
+        answer = common_list[0][0]
     return answer
